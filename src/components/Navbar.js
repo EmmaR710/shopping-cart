@@ -11,10 +11,8 @@ const BootstrapNavbar = ()=>{
                     <Nav.Link><Link to="/cart">My cart</Link></Nav.Link>
                 </Nav>
         </Navbar>
-
-
     )
-}
+};
 
 export default BootstrapNavbar;
 
