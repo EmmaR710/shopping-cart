@@ -50,6 +50,7 @@ class Cart extends Component{
                     <ul className="collection">
                         {addedItems}
                     </ul>
+                    <h5>Total: {this.props.total}</h5>
                 </div>
             </div>
         )
@@ -58,7 +59,8 @@ class Cart extends Component{
 
 const mapStateToProps = (state)=>{
     return{
-        items: state.addedItems
+        items: state.addedItems,
+        total: state.total
     }
 };
 const mapDispatchToProps = (dispatch)=>{
