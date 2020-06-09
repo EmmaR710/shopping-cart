@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { removeItem,addQuantity,subtractQuantity } from './actions/cartActions';
 
 class Cart extends Component{
@@ -30,8 +29,8 @@ class Cart extends Component{
                                     <b>Quantity: {item.quantity}</b>
                                 </p>
                                 <div className="add-remove">
-                                    <Link to="/cart"><i className="btn btn-info" onClick={()=>{this.handleAddQuantity(item.id)}}>Increase quantity</i></Link>
-                                    <Link to="/cart"><i className="btn btn-info" onClick={()=>{this.handleSubtractQuantity(item.id)}}>Decrease quantity</i></Link>
+                                    <button className="btn btn-info" onClick={()=>{this.handleAddQuantity(item.id)}}>Quantity &#9650;</button>
+                                    <button className="btn btn-info" onClick={()=>{this.handleSubtractQuantity(item.id)}}>Quantity &#9660;</button>
                                 </div>
                                 <button className="btn btn-danger" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
                             </div>
@@ -45,12 +44,9 @@ class Cart extends Component{
             );
         return(
             <div className="container">
-                <div className="cart">
-                    <h5>You have ordered:</h5>
-                    <ul className="collection">
-                        {addedItems}
-                    </ul>
-                    <h5>Total: {this.props.total}</h5>
+                <h3 className="center">You have ordered:</h3>
+                <div className="items-list" style={{display: "flex"}}>
+                    {addedItems}
                 </div>
             </div>
         )

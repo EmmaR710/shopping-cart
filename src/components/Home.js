@@ -12,9 +12,9 @@ class Home extends Component{
         let itemList = this.props.items.map(item=>{
             return(
                 <div className="card" key={item.id}>
-                    <div className="card-content">
+                    <div className="card-body">
                         <p><b>{item.title}</b></p>
-                        <p><b>Price: {item.price}$</b></p>
+                        <p>Price: {item.price}</p>
                         <button className="btn btn-primary" onClick={()=>{this.handleClick(item.id)}}>Add to cart</button>
                     </div>
                 </div>
@@ -23,7 +23,7 @@ class Home extends Component{
         return(
             <div className="container">
                 <h3 className="center">Our items</h3>
-                <div className="box">
+                <div className="items-list" style={{display: "flex"}}>
                     {itemList}
                 </div>
             </div>
